@@ -101,8 +101,11 @@ void Cplayer_blind::FireGameEvent(IGameEvent* event)
 		
 	if(pPlayerController_attacker->m_hPlayerPawn()->m_iTeamNum() == pPlayerController_target->m_hPlayerPawn()->m_iTeamNum())
 	{
-		CCSPlayerPawnBase* pPlayerPawn = pPlayerController_target->m_hPlayerPawn();
-		pPlayerPawn->m_flFlashDuration() = 0.0;
+		if(pPlayerController_attacker != pPlayerController_attacker)//maybe you should blind yourself
+		{
+			CCSPlayerPawnBase* pPlayerPawn = pPlayerController_target->m_hPlayerPawn();
+			pPlayerPawn->m_flFlashDuration() = 0.0;
+		}
 	}
 }
 
