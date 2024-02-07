@@ -92,11 +92,11 @@ void antiflash::GameFrame(bool simulating, bool bFirstTick, bool bLastTick)
 void Cplayer_blind::FireGameEvent(IGameEvent* event)
 {
 	CCSPlayerController* pPlayerController_target = static_cast<CCSPlayerController*>(event->GetPlayerController("userid"));
-	if (!pPlayerController_target) // Ignore bots
+	if (!pPlayerController_target)
 		return;
 
 	CCSPlayerController* pPlayerController_attacker = static_cast<CCSPlayerController*>(event->GetPlayerController("attacker"));
-	if (!pPlayerController_attacker) // Ignore bots
+	if (!pPlayerController_attacker)
 		return;
 		
 	if(pPlayerController_attacker->m_hPlayerPawn()->m_iTeamNum() == pPlayerController_target->m_hPlayerPawn()->m_iTeamNum())
