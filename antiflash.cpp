@@ -45,7 +45,7 @@ bool antiflash::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, boo
 	SH_ADD_HOOK(INetworkServerService, StartupServer, g_pNetworkServerService, SH_MEMBER(this, &antiflash::StartupServer), true);
 	SH_ADD_HOOK(IServerGameDLL, GameFrame, g_pSource2Server, SH_MEMBER(this, &antiflash::GameFrame), true);
 
-	gameeventmanager = static_cast<IGameEventManager2*>(CallVFunc<IToolGameEventAPI*, 91>(g_pSource2Server));
+	gameeventmanager = static_cast<IGameEventManager2*>(CallVFunc<IToolGameEventAPI*, 93>(g_pSource2Server));
 
 	ConVar_Register(FCVAR_GAMEDLL);
 
